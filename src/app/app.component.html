@@ -2,4 +2,16 @@
   <span>PriceWise</span>
 </mat-toolbar>
 
+<h3>{{barcodeValue}}</h3>
+
+<button (click)="toggleCamera()">{{toggleCameraButtonText}}</button>
+
+<div style="border: 1px solid red;">
+  <zxing-scanner
+  [enable]="cameraEnabled"
+  [formats]="allowedFormats"
+  (scanSuccess)="scanSuccessHandler($event)" >
+  </zxing-scanner>
+</div>
+
 <router-outlet />
