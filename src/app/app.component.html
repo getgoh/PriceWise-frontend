@@ -1,8 +1,28 @@
-<mat-toolbar>
+<!-- <mat-toolbar>
   <span>PriceWise</span>
-</mat-toolbar>
+</mat-toolbar> -->
 
-<h3>{{barcodeValue}}</h3>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport fixedTopGap="64">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/search" (click)="drawer.toggle()">Search</a>
+      <a mat-list-item routerLink="/scan" (click)="drawer.toggle()">Scan</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>PriceWise</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<app-search />
+
+<!-- <h3>{{barcodeValue}}</h3>
 
 <button (click)="toggleCamera()">{{toggleCameraButtonText}}</button>
 
@@ -12,6 +32,6 @@
   [formats]="allowedFormats"
   (scanSuccess)="scanSuccessHandler($event)" >
   </zxing-scanner>
-</div>
+</div> -->
 
 <router-outlet />

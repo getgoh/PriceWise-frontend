@@ -3,11 +3,15 @@ import { RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { BarcodeFormat } from '@zxing/library';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { SearchComponent } from './search/search.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatToolbarModule, ZXingScannerModule],
+  imports: [RouterOutlet, MatToolbarModule, ZXingScannerModule, MatIconModule, MatSidenavModule, MatListModule, SearchComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
